@@ -1,4 +1,5 @@
 <div style="border: 5px green solid;">
+  <ng-content></ng-content>
   <p>test2 works!</p>
   <button (click)="onShowData()">Show Data</button>
   <p>MY VAR 1: {{myvar1}}</p>
@@ -12,4 +13,5 @@
 (dblclick)="test3($event)"
 
 >do click events</button>
+  <ng-content></ng-content>
 </div>

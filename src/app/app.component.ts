@@ -12,4 +12,7 @@ export class AppComponent {
   printDataNuriaComp(event: any) {
     console.log('NURIA COMP:', event);
   }
+  printData(event) {
+    console.log('CHILD COMP SEND DATA: ', event);
+  }
 }

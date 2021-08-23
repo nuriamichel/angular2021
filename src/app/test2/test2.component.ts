@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 @Component({
   selector: 'app-test2',
   templateUrl: './test2.component.html',

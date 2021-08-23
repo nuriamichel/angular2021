@@ -32,7 +32,7 @@ export class Admin2Component implements OnInit {
    * @params lastName 
    * return name and lastName joined
   */
-   public testParams(name:string, lastName?: string = 'gutierrez'): string{
+   public testParams(name:string, lastName?: string): string{
     const aux = 'juan';
     console.log((name ?? aux)  + ' ' + lastName)
     return name + ' ' + lastName;

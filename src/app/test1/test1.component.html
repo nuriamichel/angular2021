@@ -4,4 +4,18 @@
   </p>
   <p>INPUT STATUS: {{statusTest}}</p>
   <button (click)="onClickTest($event)">Send Data outside</button>
+  <br><br>
+  Name:
+  <input type="text" [(ngModel)]="name">
+  <br><br>
+    LastName:
+  <input type="text" [(ngModel)]="lastName">
+  <br><br>
+  <button (click)="addPerson($event)">Add</button>
+  <br><br>
+  <ul>
+    <li *ngFor="let person of people">
+      {{person.name}} {{person.lastName}}
+    </li>
+  </ul>
 </div>

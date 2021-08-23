@@ -23,7 +23,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 export class TransactionComponent {
 
-  @Input() date: Date;
+  @Input() date: string;
   @Input() from: string;
   @Input() to: string;
   @Input() quantity: number;

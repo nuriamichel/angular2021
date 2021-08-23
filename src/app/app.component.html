@@ -21,6 +21,20 @@
 
 <p>TRANSACCIONES</p>
 
+<div style="display: flex; flexDirection: row;">
+<div *ngFor="let tran of allTransac">
+  <transaction
+  [date]="tran.date"
+  [from]="tran.from"
+  [to]="tran.to"
+  [quantity]="tran.quantity"
+  [moneyType]="tran.moneyType"
+  [mineType]="tran.mineType"
+  [miner]="tran.miner">
+</transaction>
+</div>
+</div>
+
 
 
 

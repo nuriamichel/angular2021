@@ -14,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
     <p>MoneyType: {{moneyType | uppercase}}</p>
 	  <p>MineType: {{mineType }}</p>
 	  <p>Miner: {{miner}}</p>
-    <button (click)="onMine()">
+    <button (click)="onMine()" [disabled]="mineType==='PoS' && miner<20">
       Mine
     </button>
 

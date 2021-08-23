@@ -26,8 +26,12 @@ export class AppComponent {
     {date: "2019-09-07T15:50+00Z", from: "LUCAS123", to: "MARCOS123", quantity: 2, moneyType: "btc", mineType: "PoW", miner: 3},
     {date: "2019-09-07T15:50+00Z", from: "MARCOS123", to: "LUCAS123", quantity: 2, moneyType: "eth", mineType: "PoS", miner: 5}
     ];
+
+   
+   
+    
     mine(){
-      
+
     }
 
    

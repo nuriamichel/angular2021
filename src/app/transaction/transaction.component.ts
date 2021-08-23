@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   <div [style.background]="mineType==='PoW' ? 'yellow' : 'green'"
        style="float: left; margin: 10px; padding: 10px;">
 
-	  <p>Date: {{date}}</p>
+	  <p>Date: {{date | date: 'shortDate'}}</p>
 	  <p>From: {{from}}</p>
 	  <p>To: {{to}}</p>
     <p>Quantity: {{quantity}}</p>

@@ -1,3 +1,13 @@
 <p>App component</p>
 <nuria-comp [status]="myStatus" (onSendData)="printDataNuriaComp($event)"></nuria-comp>
 <app-test2 name="juan" lastName="gutierres" (onSendData)="printData($event)"></app-test2>
+
+<input type="text" [(ngModel)]="myStatus">
+
+
+
+<button (click)="sw = !sw">SHOW TEST3</button>
+<div *ngIf="sw">
+  <app-test3 [name]="myStatus">
+  </app-test3>
+</div>

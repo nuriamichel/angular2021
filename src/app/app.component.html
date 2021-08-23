@@ -7,7 +7,31 @@
 
 
 <button (click)="sw = !sw">SHOW TEST3</button>
-<div *ngIf="sw">
+<div [hidden]="sw">
   <app-test3 [name]="myStatus">
   </app-test3>
 </div>
+
+<p>----------------------</p>
+<span *ngFor="let item of ['first', 'second', 'thrid']; let i = index;">
+    <nuria-comp
+    *ngIf="item !== 'first'"
+    [status]="item" 
+    (onSendData)="printDataNuriaComp($event)">
+    </nuria-comp>
+  </span>
+<p>-------------------------------</p>
+
+<input type="text" [(ngModel)]="color">
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'red'">
+    <nuria-comp [status]="color" (onSendData)="printDataNuriaComp($event)">
+    </nuria-comp>
+  </li>
+  <li *ngSwitchCase="'yellow'">
+    <app-test3 [name]="color">
+    </app-test3>
+  </li>
+  <li *ngSwitchCase="'green'">green</li>
+  <li *ngSwitchDefault>Default Orange</li>
+</ul>

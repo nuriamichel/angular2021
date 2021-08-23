@@ -10,6 +10,8 @@ export class AppComponent {
   myStatus = 'my status';
   sw = true;
 
+  color:string;
+
   printDataNuriaComp(event: any) {
     console.log('NURIA COMP:', event);
   }

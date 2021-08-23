@@ -2,5 +2,10 @@
   <p>
     test3 works!
   </p>
+  <p>Var: {{name}}</p>
+    <p>Var: {{lastName}}</p>
+    <input type="text" [(ngModel)]="namee">
+    <input type="text" [(ngModel)]="lastName">
+    <button (click)="concat($event)">Concatenar valores</button>
   <input type="text" [(ngModel)]="name">
 </div>

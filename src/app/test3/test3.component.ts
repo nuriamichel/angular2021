@@ -26,11 +26,16 @@ export class Test3Component
     AfterViewChecked,
     AfterContentInit,
     AfterContentChecked {
-  @Input() name;
+  namee = 'Nuria';
+  lastName = 'Michel';
 
   constructor() {
     console.log('CONTRUCTOR');
   }
+  concat(event: any) {
+    console.log('Nombre concatenado: ', this.namee + ' ' + this.lastName);
+  }
+  @Input() name;
 
   ngOnChanges(changes: any) {
     console.log('ON CHANGES', changes);

@@ -2,38 +2,28 @@
 
 
 
-<p>2 - BITCOIN - ETHEREUM</p>
+  <p>2 - BITCOIN - ETHEREUM</p>
 
 
 
-<p>WALLETS</p>
+  <p>WALLETS</p>
 
-<div style="display: flex; flexDirection: row;">
-  <div *ngFor="let wallet of allWallets">
-    <wallet
-     [wallet]="wallet.wallet"
-     [name]="wallet.name"
-     [eth]="wallet.eth"
-     [btc]="wallet.btc">
-  </wallet>
+  <div style="display: flex; flexDirection: row;">
+    <div *ngFor="let wallet of allWallets">
+      <wallet [wallet]="wallet.wallet" [name]="wallet.name" [eth]="wallet.eth" [btc]="wallet.btc">
+      </wallet>
+    </div>
   </div>
-</div>
 
-<p>TRANSACCIONES</p>
+  <p>TRANSACCIONES</p>
 
-<div style="display: flex; flexDirection: row;">
-<div *ngFor="let tran of allTransac">
-  <transaction
-  [date]="tran.date"
-  [from]="tran.from"
-  [to]="tran.to"
-  [quantity]="tran.quantity"
-  [moneyType]="tran.moneyType"
-  [mineType]="tran.mineType"
-  [miner]="tran.miner">
-</transaction>
-</div>
-</div>
+  <div style="display: flex; flexDirection: row;">
+    <div *ngFor="let tran of allTransac">
+      <transaction [date]="tran.date" [from]="tran.from" [to]="tran.to" [quantity]="tran.quantity"
+        [moneyType]="tran.moneyType" [mineType]="tran.mineType" [miner]="tran.miner" (mine)="mine()">
+      </transaction>
+    </div>
+  </div>
 
 
 

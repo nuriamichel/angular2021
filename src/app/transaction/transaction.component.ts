@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   <div [style.background]="mineType==='PoW' ? 'yellow' : 'green'"
        style="float: left; margin: 10px; padding: 10px;">
 
-	  <p>Date: {{date | date:'M/d/yy'}}</p>
+	  <p>Date: {{date}}</p>
 	  <p>From: {{from}}</p>
 	  <p>To: {{to}}</p>
     <p>Quantity: {{quantity}}</p>

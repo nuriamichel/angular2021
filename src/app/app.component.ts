@@ -8,62 +8,21 @@ import { filter, map, delay } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular2021';
-  myStatus = 'my status';
-  sw = true;
-
-  color: string;
-  personASub: Subscription;
-  video = 1;
-  tictock = new BehaviorSubject(this.video);
-  @ViewChild('myDiv1') myDiv1: ElementRef;
-  @ViewChild('myDiv2') myDiv2: ElementRef;
-  @ViewChild('myCompRicardo') myCompNuria: any;
-
   constructor() {
-    // PERSON A
-    this.personASub = this.tictock
-      .pipe(filter(s => s % 2 === 0))
-      .subscribe(v => {
-        console.log('PERSON A VIDEO', v);
-      });
-    // PERSON B
-    this.tictock.pipe(delay(4000)).subscribe(v => {
-      console.log('PERSON B VIDEO', v);
-    });
-    // PERSON C
-    this.tictock.subscribe(v => {
-      console.log('PERSON C VIDEO', v);
-    });
+    this.pure(2, 3);
+    this.pure(10, 2);
+    this.pure(5, 5);
+    this.impure(2, 3);
+    this.impure(10, 2);
+    this.impure(5, 5);
   }
-  onAddVideo() {
-    this.video++;
-    this.tictock.next(this.video);
+  pure(a: number, b: number) {
+    console.log(a + b);
+    return a + b;
   }
-  person1Unsubscribe() {
-    this.personASub.unsubscribe();
-    console.log('PERSON A SE DESUSCRIBE');
-  }
-
-  printDataNuriaComp(event: any) {
-    console.log('NURIA COMP:', event);
-  }
-  printData(event) {
-    console.log('CHILD COMP SEND DATA: ', event);
-  }
-  test(event) {
-    console.log('AAA<zx<zAAAAAAAAAAAAAAAAAAAAAAAAA', event);
-  }
-
-  test100(event) {
-    console.log('234234234234234', event);
-  }
-
-  onShowLocalVars(){
-    console.log(this.myDiv1, this.myDiv2, this.myCompNuria);
-  
-    this.myCompNuria.onClickTest();
-  
-    this.myDiv2.nativeElement.value = 'ricardo';
+  impure(a: number, b: number) {
+    const aux = Math.random();
+    console.log(a + b + aux);
+    return a + b + aux;
   }
 }

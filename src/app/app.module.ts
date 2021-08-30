@@ -19,6 +19,12 @@ import {RouterModule, Routes} from "@angular/router";
 import { View2Component } from './view2/view2.component';
 import { View1sub1Component } from './view1/view1sub1/view1sub1.component';
 import { View1sub2Component } from './view1/view1sub2/view1sub2.component';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { Admin1Component } from './admin/admin1/admin1.component';
+import { Admin2Component } from './admin/admin2/admin2.component';
+import { Home1Component } from './home/home1/home1.component';
+import { Home2Component } from './home/home2/home2.component';
 
 
 const routes: Routes = [
@@ -44,6 +50,34 @@ const routes: Routes = [
   },
   {
     path: 'view3', loadChildren: () => import('./view3/view3.module').then(m => m.View3Module)
+  },
+  {
+    path: 'home', component: HomeComponent,
+    children: [
+      {
+        path: '', redirectTo: 'home1', pathMatch: 'full'
+      },
+      {
+        path: 'home1', component: Home1Component,
+      },
+      {
+        path: 'home2', component: Home2Component,
+      }
+    ]
+  },
+  {
+    path: 'admin', component: AdminComponent,
+    children: [
+      {
+        path: '', redirectTo: 'admin1', pathMatch: 'full'
+      },
+      {
+        path: 'admin1', component: Admin1Component,
+      },
+      {
+        path: 'admin2', component: Admin2Component,
+      }
+    ]
   }
 ];
 
@@ -58,7 +92,13 @@ const routes: Routes = [
     View1Component,
     View2Component,
     View1sub1Component,
-    View1sub2Component
+    View1sub2Component,
+    HomeComponent,
+    AdminComponent,
+    Admin1Component,
+    Admin2Component,
+    Home1Component,
+    Home2Component
   ],
   imports: [
     BrowserModule,

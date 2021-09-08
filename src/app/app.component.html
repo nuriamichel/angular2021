@@ -1,7 +1,7 @@
 <p>2 - BITCOIN - ETHEREUM</p>
 <p>WALLETS</p>
 
-<div style="position:fixed; right:10px; top:2px; background-color:cyan;">
+<div style="position:fixed; right:10px; top:2px;">
   Total ETH: {{total('eth')}}
   TOTAL BTC: {{total('btc')}}
 </div>
@@ -24,7 +24,7 @@
   <div *ngFor="let transaction of transactions; let i = index;">
 
     <app-transaction [data]="transaction">
-      <button [disabled]="transaction.mineType === 'PoS' && transaction.miner < 20" (click)="mine()"> Mine</button>
+      <button [disabled]="transaction.mineType === 'PoS' && transaction.miner < 20" (click)="mine(transaction, i)"> Mine</button>
 
     </app-transaction>
   </div>
